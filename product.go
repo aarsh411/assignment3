@@ -16,14 +16,15 @@ import (
 type Order struct {
 	OrderID      uint      `json:"orderId" gorm:"primary_key"`
 	CustomerName string    `json:"customerName"`
-	OrderedAt    time.Time `json:"orderedAt"`
-	Items        []Item    `json:"items" gorm:"foreignkey:OrderID"`
+	Timing    time.Time `json:"timing"`
+	No_Items        []Item    `json:"no_items" gorm:"foreignkey:OrderID"`
+	Delivery_Charges   uint	`json:"charges"`
 }
 
 type Item struct {
 	LineItemID  uint   `json:"lineItemId" gorm:"primary_key"`
 	ItemCode    string `json:"itemCode"`
-	Description string `json:"description"`
+	Details string `json:"details"`
 	Quantity    uint   `json:"quantity"`
 	OrderID     uint   `json:"-"`
 }

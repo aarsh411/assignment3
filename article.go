@@ -16,6 +16,7 @@ type Article struct {
 	Title   string `json:"Title"`
 	Desc    string `json:"desc"`
 	Content string `json:"content"`
+	time_to_read string `json:"time_to_read"`
 }
 
 var Articles []Article
@@ -76,8 +77,8 @@ func handleRequests() {
 
 func main() {
 	Articles = []Article{
-		Article{Id: "1", Title: "Health", Desc: "Health is wealth", Content: "Article Content"},
-		Article{Id: "2", Title: "Personality", Desc: "Don't judge book by it's cover", Content: "Article Content"},
+		Article{Id: "1", Title: "Geek updates", Desc: "geek update", Content: "Article about technology", time_to_read:"10 minutes"},
+		Article{Id: "2", Title: "Diet", Desc: "healthy diet", Content: "article about food and diet", time_to_read:"10 minutes"},
 	}
 	handleRequests()
 }
